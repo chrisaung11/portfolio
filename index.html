@@ -23,13 +23,27 @@
                 <div class="content-wrap">
                     <h1>Chris Aung</h1>
                     <h2>Full-Stack Web Developer</h2>
-                    <p>
-  <strong>Web Technologies:</strong> HTML, CSS, Bootstrap <br>
-  <strong>Programming Languages:</strong> Python, Java, JavaScript <br>
-  <strong>Backend & Server:</strong> Node.js, AWS <br>
-  <strong>Frontend Frameworks:</strong> React, Angular <br>
-  <strong>Cloud & Machine Learning:</strong> AWS Machine Learning, DeepRacer
-</p>
+  <script>
+    let index = 0;
+    const skills = [
+      {category: "Web Technologies", list: "HTML, CSS, Bootstrap"},
+      {category: "Programming Languages", list: "Python, Java, JavaScript"},
+      {category: "Backend & Server", list: "Node.js, AWS"},
+      {category: "Frontend Frameworks", list: "React, Angular"},
+      {category: "Cloud & Machine Learning", list: "AWS Machine Learning, DeepRacer"}
+    ];
+
+    function displaySkills() {
+      const skillDisplay = document.getElementById('skillDisplay');
+      skillDisplay.innerHTML = `<span><strong>${skills[index].category}:</strong> ${skills[index].list}</span>`;
+      index = (index + 1) % skills.length;
+    }
+
+    setInterval(displaySkills, 2000);  // Change every 2 seconds
+  </script>
+</head>
+<body>
+  <p id="skillDisplay"></p>
 
                     <p>I love chess and intellectual challenges.</p>
                 </div>
